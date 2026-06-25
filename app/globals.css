@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #1a1208;
+  --surface: #2b2118;
+  --card: #352819;
+  --border: #4a3520;
+  --orange: #e8721c;
+  --amber: #f5a623;
+  --cream: #f5e6c8;
+  --muted: #a89070;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Flame glow utility */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(232, 114, 28, 0.3);
+}
+
+.glow-text {
+  text-shadow: 0 0 30px rgba(245, 166, 35, 0.4);
+}
+
+/* Smooth card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(232, 114, 28, 0.2);
+}
+
+/* Animated flame */
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(0.95); }
+}
+.flame { animation: flicker 2s ease-in-out infinite; }
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(26,18,8,0.3) 0%, rgba(26,18,8,0.7) 60%, rgba(26,18,8,1) 100%);
+}
