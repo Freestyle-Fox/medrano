@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { LayoutDashboard, ShoppingBag, Calendar, Package, Flame } from 'lucide-react'
-
+export const dynamic = 'force-dynamic'
 export const metadata = { title: "Admin — Medrano's" }
 
 export default function AdminLayout({ children }) {
